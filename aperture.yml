@@ -1,0 +1,37 @@
+# Aperture Configuration
+fail_on: ERROR
+
+migration_paths:
+  - "db/migrations/*.sql"
+
+rules:
+  MG001:
+    enabled: true
+    severity: ERROR
+  MG002:
+    enabled: true
+    severity: WARNING
+  MG003:
+    enabled: true
+    severity: ERROR
+  MG004:
+    enabled: true
+    severity: WARNING
+  MG005:
+    enabled: true
+    severity: ERROR
+  MG006:
+    enabled: true
+    severity: ERROR
+  MG007:
+    enabled: true
+    severity: WARNING
+  MG008:
+    enabled: true
+    severity: ERROR
+  MG009:
+    enabled: true
+    severity: ERROR
+  MG010:
+    enabled: true
+    severity: WARNING

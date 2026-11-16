@@ -1,0 +1,27 @@
+name: Aperture
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  scan-migrations:
+    name: Scan Database Migrations
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Aperture
+        uses: Saaras-spec/aperture@main
+        with:
+          config: aperture.yml
+          base-ref: origin/${{ github.base_ref }}
+          fail-on: ERROR
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          comment-on-pr: "true"
